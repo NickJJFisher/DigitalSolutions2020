@@ -6,7 +6,7 @@ R1 = (L1*W1)
 R2 = (L2 * W2)
 if R1 > R2:
     print ("Rectangle 1 is larger")
-elif R1 == R2
+elif R1 == R2:
     print ("Same")
 else:
     print ("Rectangle 2 is larger")

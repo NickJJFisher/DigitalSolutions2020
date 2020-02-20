@@ -19,3 +19,5 @@ if number == 9:
     print ("IX")
 if number == 10:
     print ("X")
+else:
+    print ("Error")
