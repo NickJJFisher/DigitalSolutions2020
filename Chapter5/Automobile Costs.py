@@ -1,0 +1,8 @@
+LoanCost = int(input("Average Monthly Loan Cost"))
+Insurance = int(input("Monthly Insurance cost"))
+Gas = int(input("Average gas costs"))
+Oil = int(input("Average oil costs"))
+Tire = int(input("Average tire maintanence cost"))
+monthcost = (Tire + Oil + Gas + Insurance + LoanCost)
+print(monthcost, "is the monthly cost.")
+print(monthcost * 12, "is the annual cost")
