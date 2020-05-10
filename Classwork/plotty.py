@@ -1,7 +1,9 @@
 #Imports
 import random
-from guizero import App, Picture, PushButton, Window
+from guizero import App, Picture, PushButton, Window, TextBox, Text
 
+guessbox = int(0)
+total = int(0)
 #App and Window formatting
 app = App(layout="grid")
 window = Window(app, title="Second Window", layout="grid")
@@ -44,18 +46,31 @@ def fourcard():
     picture3 = Picture(app, image=randCard3, grid=[2, 3])  # define the picture
     picture4 = Picture(app, image=randCard4, grid=[2, 4])  # define the picture
 
+    total = cardNum1 + cardNum2 + cardNum3 + cardNum4
+
+    Text(app, text=(total), grid=[6,6])
+    guessbox = TextBox(app, grid=[3, 0])
+
     if len(mylist) == 0:
         window.show()
-        window2.show()
         app.hide()
 
+def check():
+    if guessbox == total:
+        window2.show()
+        app.hide()
+    else:
+        text = Text(app, text="Incorrect Guess", grid=[0, 3])
 #App Display
 PushButton(app, command=card, grid = [1,1], text = "Single")
 PushButton(app, command=fourcard, grid = [1,2], text= "Four")
+PushButton(app, command=check, grid=[3, 1], text="Check")
 
 #Window1 Display
-PushButton(window, grid = [1,1], text= "Imagine being out of cards")
+PushButton(window, grid = [1,1],image="dt.png", text= "Imagine being out of cards lol xd")
 
+#Window2 Display
+PushButton(window2, grid = [1,1], text= "Good Job")
 #App Displays
 app.display()
 
