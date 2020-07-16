@@ -7,7 +7,8 @@ print(list2D[4][2]) #Franks age
 print(list2D[1][1]) #Sams Postcode
 print(len(list2D)) #Length of list
 print(len(list2D[4])) # Length of 5th item in list
-
+list2D.remove[1][0]
+print(list2D)
 name = input("Who are you looking for?: ")
 
 for i in range(len(list2D)): #Loop for every time in list

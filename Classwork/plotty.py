@@ -25,36 +25,28 @@ def card():
 
 def fourcard():
     random.shuffle(mylist) #randomly shuffer
-
     cardNum1 = mylist[0] #define card Number to the first on the list
     cardNum2 = mylist[1]  # define card Number to the second on the list
     cardNum3 = mylist[2]  # define card Number to the third on the list
     cardNum4 = mylist[3]  # define card Number to the fourth on the list
-
     randCard1 = "PlayingCards/" + str(cardNum1) + ".png"
     randCard2 = "PlayingCards/" + str(cardNum2) + ".png"
     randCard3 = "PlayingCards/" + str(cardNum3) + ".png"
     randCard4 = "PlayingCards/" + str(cardNum4) + ".png"#define rankcard as file directory of a card
-
     mylist.remove(cardNum1) #Remove the card just used from list
     mylist.remove(cardNum2)
     mylist.remove(cardNum3)
     mylist.remove(cardNum4)
-
     picture1 = Picture(app, image=randCard1, grid =[2,1]) #define the picture
     picture2 = Picture(app, image=randCard2, grid=[2, 2])  # define the picture
     picture3 = Picture(app, image=randCard3, grid=[2, 3])  # define the picture
     picture4 = Picture(app, image=randCard4, grid=[2, 4])  # define the picture
-
     total = cardNum1 + cardNum2 + cardNum3 + cardNum4
-
     Text(app, text=(total), grid=[6,6])
     guessbox = TextBox(app, grid=[3, 0])
-
     if len(mylist) == 0:
         window.show()
         app.hide()
-
 def check():
     if guessbox == total:
         window2.show()
